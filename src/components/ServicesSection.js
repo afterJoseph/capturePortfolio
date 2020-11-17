@@ -19,17 +19,15 @@ const ServicesSection = () => {
           High <span>quality</span> services.
         </h2>
         <div className="cards">
-          {cardContent.map((card) => {
-            return (
-              <div className="card">
-                <div className="icon">
-                  <img src={card.icon} alt={card.name} />
-                  <h3>{card.name}</h3>
-                </div>
-                <p>Lorem ipsum dolor sit amet.</p>
+          {cardContent.map((card) => (
+            <div className="card">
+              <div className="icon">
+                <img src={card.icon} alt={card.name} />
+                <h3>{card.name}</h3>
               </div>
-            );
-          })}
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="image">
