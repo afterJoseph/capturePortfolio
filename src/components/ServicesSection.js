@@ -4,6 +4,9 @@ import clock from '../img/clock.svg';
 import diaphragm from '../img/diaphragm.svg';
 import money from '../img/money.svg';
 import teamwork from '../img/teamwork.svg';
+// Styles
+import styled from 'styled-components';
+import { About, Description, Image } from '../styles';
 
 const ServicesSection = () => {
   const cardContent = [
@@ -13,28 +16,55 @@ const ServicesSection = () => {
     { icon: teamwork, name: 'Friendly' },
   ];
   return (
-    <div className="services">
-      <div className="description">
+    <Services>
+      <Description>
         <h2>
           High <span>quality</span> services.
         </h2>
-        <div className="cards">
+        <Cards>
           {cardContent.map((card) => (
-            <div className="card">
+            <Card>
               <div className="icon">
                 <img src={card.icon} alt={card.name} />
                 <h3>{card.name}</h3>
               </div>
               <p>Lorem ipsum dolor sit amet.</p>
-            </div>
+            </Card>
           ))}
-        </div>
-      </div>
-      <div className="image">
+        </Cards>
+      </Description>
+      <Image>
         <img src={home2} alt="camera" />
-      </div>
-    </div>
+      </Image>
+    </Services>
   );
 };
+
+const Services = styled(About)`
+  h2 {
+    padding-bottom: 5rem;
+  }
+  p {
+    width: 70%;
+    padding: 2rem 0 4rem 0;
+  }
+`;
+
+const Cards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Card = styled.div`
+  flex-basis: 20rem;
+  .icon {
+    display: flex;
+    align-items: center;
+    h3 {
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+  }
+`;
 
 export default ServicesSection;
