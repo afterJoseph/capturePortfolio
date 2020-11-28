@@ -1,25 +1,20 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { MovieState } from "../movieState";
 // Images
 import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 
 const OurWork = () => {
-  const moviesInfo = [
-    { title: "The Athlete", img: athlete, imgAlt: "athlete" },
-    { title: "The Racer", img: theracer, imgAlt: "theracer" },
-    { title: "Good Times", img: goodtimes, imgAlt: "goodtimes" },
-  ];
-
   return (
     <StyledWork>
-      {moviesInfo.map((movie) => (
+      {MovieState().map((movie) => (
         <StyledMovie>
           <h2>{movie.title}</h2>
           <div className="line"></div>
-          <Link>
-            <img src={movie.img} alt={movie.imgAlt} />
+          <Link to={movie.url}>
+            <img src={movie.mainImg} alt={movie.title} />
           </Link>
         </StyledMovie>
       ))}
