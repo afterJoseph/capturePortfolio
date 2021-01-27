@@ -1,28 +1,34 @@
 // Styles
-import styled from 'styled-components';
-import { About } from '../styles';
+import styled from "styled-components";
+import { About } from "../styles";
+import Toggle from "./Toggle";
+import { AnimateSharedLayout } from "framer-motion";
 
 const FaqSection = () => {
   const questions = [
     {
-      title: 'How Do I Start?',
-      subTitle: 'Lorem ipsum dolor sit amet.',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.',
+      title: "How Do I Start?",
+      subTitle: "Lorem ipsum dolor sit amet.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.",
     },
     {
-      title: 'Daily Schedule',
-      subTitle: 'Lorem ipsum dolor sit amet.',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.',
+      title: "Daily Schedule",
+      subTitle: "Lorem ipsum dolor sit amet.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.",
     },
     {
-      title: 'Different Payment Methods',
-      subTitle: 'Lorem ipsum dolor sit amet.',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.',
+      title: "Different Payment Methods",
+      subTitle: "Lorem ipsum dolor sit amet.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.",
     },
     {
-      title: 'What Products Do You Offer?',
-      subTitle: 'Lorem ipsum dolor sit amet.',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.',
+      title: "What Products Do You Offer?",
+      subTitle: "Lorem ipsum dolor sit amet.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.",
     },
   ];
 
@@ -31,16 +37,16 @@ const FaqSection = () => {
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
-      {questions.map((question) => (
-        <div className="question">
-          <h4>{question.title}</h4>
-          <div className="answer">
-            <p>{question.subTitle}</p>
-            <p>{question.description}</p>
-          </div>
-          <div className="faq-line"></div>
-        </div>
-      ))}
+      <AnimateSharedLayout>
+        {questions.map((question) => (
+          <Toggle title={question.title}>
+            <div className="answer">
+              <p>{question.subTitle}</p>
+              <p>{question.description}</p>
+            </div>
+          </Toggle>
+        ))}
+      </AnimateSharedLayout>
     </Faq>
   );
 };

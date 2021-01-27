@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const About = styled.div`
   min-height: 90vh;
@@ -15,11 +15,18 @@ export const Description = styled.div`
   h2 {
     font-weight: lighter;
   }
+  z-index: 2;
+  button {
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
 `;
 
 export const Image = styled.div`
   flex: 1;
   overflow: hidden;
+  z-index: 2;
 
   img {
     width: 100%;
