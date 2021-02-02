@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { About } from "../styles";
 import Toggle from "./Toggle";
 import { AnimateSharedLayout } from "framer-motion";
+import { scrollRevel } from "../animation";
+import { useScroll } from "./useScroll";
 
 const FaqSection = () => {
   const questions = [
@@ -31,9 +33,15 @@ const FaqSection = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, fugiat assumenda.",
     },
   ];
+  const [element, controls] = useScroll();
 
   return (
-    <Faq>
+    <Faq
+      variants={scrollRevel}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       <h2>
         Any Questions <span>FAQ</span>
       </h2>

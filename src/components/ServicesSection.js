@@ -1,22 +1,30 @@
-import home2 from '../img/home2.png';
+import home2 from "../img/home2.png";
 // Import Icons
-import clock from '../img/clock.svg';
-import diaphragm from '../img/diaphragm.svg';
-import money from '../img/money.svg';
-import teamwork from '../img/teamwork.svg';
+import clock from "../img/clock.svg";
+import diaphragm from "../img/diaphragm.svg";
+import money from "../img/money.svg";
+import teamwork from "../img/teamwork.svg";
 // Styles
-import styled from 'styled-components';
-import { About, Description, Image } from '../styles';
+import { About, Description, Image } from "../styles";
+import styled from "styled-components";
+import { scrollRevel } from "../animation";
+import { useScroll } from "./useScroll";
 
 const ServicesSection = () => {
   const cardContent = [
-    { icon: clock, name: 'Efficient' },
-    { icon: diaphragm, name: 'Focus' },
-    { icon: money, name: 'Affordable' },
-    { icon: teamwork, name: 'Friendly' },
+    { icon: clock, name: "Efficient" },
+    { icon: diaphragm, name: "Focus" },
+    { icon: money, name: "Affordable" },
+    { icon: teamwork, name: "Friendly" },
   ];
+  const [element, controls] = useScroll();
   return (
-    <Services>
+    <Services
+      variants={scrollRevel}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       <Description>
         <h2>
           High <span>quality</span> services.
