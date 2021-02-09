@@ -8,6 +8,12 @@ export const About = styled(motion.div)`
   justify-content: space-between;
   padding: 5rem 10rem;
   color: white;
+
+  @media (max-width: 1300px) {
+    display: block;
+    padding: 2rem;
+    text-align: center;
+  }
 `;
 
 export const Description = styled.div`
@@ -20,6 +26,12 @@ export const Description = styled.div`
   button {
     &:hover {
       transform: translateY(-10px);
+    }
+  }
+  @media (max-width: 1300px) {
+    padding: 0;
+    button {
+      margin: 2rem 0 5rem 0;
     }
   }
 `;
